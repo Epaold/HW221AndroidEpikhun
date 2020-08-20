@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     private SharedPreferences myNoteSharedPref;
     private static String NOTE_TEXT = "note_text";
+    //private  String mystrdatasave;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,8 +29,9 @@ public class MainActivity extends AppCompatActivity {
     private void initViews() {
         mInputNote = findViewById(R.id.inputNote);
         mBtnSaveNote = findViewById(R.id.btnSaveNote);
+        String myNoteSharName = getString(R.string.myNoteSharedPrefName);
 
-        myNoteSharedPref = getSharedPreferences("MyNote", MODE_PRIVATE);
+        myNoteSharedPref = getSharedPreferences(myNoteSharName, MODE_PRIVATE);
 
         mBtnSaveNote.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,7 +40,8 @@ public class MainActivity extends AppCompatActivity {
                 String noteTxt = mInputNote.getText().toString();
                 myEditor.putString(NOTE_TEXT, noteTxt);
                 myEditor.apply();
-                Toast.makeText(MainActivity.this, "данные сохранены", Toast.LENGTH_LONG).show();
+                String mystrdatasave = getString(R.string.datasave);
+                Toast.makeText(MainActivity.this, mystrdatasave, Toast.LENGTH_LONG).show();
             }
         });
     }
