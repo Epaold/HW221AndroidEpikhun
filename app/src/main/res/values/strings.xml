@@ -2,5 +2,5 @@
     <string name="app_name">MyNote</string>
     <string name="btnSaveNote">СОХРАНИТЬ</string>
     <string name="datasave">Данные сохранены</string>
-    <string name="myNoteSharedPrefName">Данные сохранены</string>
+
 </resources>
